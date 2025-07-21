@@ -135,6 +135,25 @@ body {
   outline-offset: 2px;
 }
 
+/* chat messages */
+.chat-message {
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  word-break: break-word;
+}
+
+.chat-message.user {
+  background: #e6f7ff;
+  text-align: right;
+}
+
+.chat-message.assistant {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  text-align: left;
+}
+
 /* visually hidden */
 .visually-hidden {
   position: absolute;
@@ -213,6 +232,11 @@ body {
   color: #666;
 }
 
+.product-card.selected {
+  border: 2px solid #000;
+  background: #e6f7ff;
+}
+
 /* selected products */
 .selected-products {
   margin: 40px 0;
@@ -252,4 +276,157 @@ body {
 
 .generate-btn i {
   margin-right: 8px;
+}
+
+.desc-btn {
+  margin-top: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  background: #f0f0f0;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.desc-btn:hover,
+.desc-btn:focus {
+  background: #e6f7ff;
+  outline: none;
+}
+
+/* Modal styles */
+.product-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 30, 30, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.product-modal[style*="none"] {
+  display: none !important;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 32px 24px 24px 24px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90vw;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  position: relative;
+  text-align: left;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-content p {
+  margin: 8px 0 16px 0;
+  color: #666;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close:focus {
+  outline: 2px solid #000;
+}
+
+#modalDesc {
+  font-size: 15px;
+  color: #222;
+  background: #f9f9f9;
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #eee;
+}
+
+.remove-selected-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #c00;
+  font-size: 18px;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  z-index: 2;
+}
+
+.remove-selected-btn:hover,
+.remove-selected-btn:focus {
+  background: #ffeaea;
+  color: #900;
+  outline: none;
+}
+
+/* RTL support */
+:root[dir="rtl"] body,
+:root[dir="rtl"] .page-wrapper {
+  direction: rtl;
+}
+
+:root[dir="rtl"] .site-header,
+:root[dir="rtl"] .site-title,
+:root[dir="rtl"] .search-section,
+:root[dir="rtl"] .chatbox,
+:root[dir="rtl"] .chat-window,
+:root[dir="rtl"] .selected-products,
+:root[dir="rtl"] .site-footer,
+:root[dir="rtl"] .products-grid,
+:root[dir="rtl"] #selectedProductsList {
+  text-align: right;
+}
+
+:root[dir="rtl"] .products-grid {
+  flex-direction: row-reverse;
+}
+
+:root[dir="rtl"] .product-card {
+  flex-direction: row-reverse;
+}
+
+:root[dir="rtl"] .product-card .product-info {
+  align-items: flex-end;
+}
+
+:root[dir="rtl"] .remove-selected-btn {
+  right: auto;
+  left: 8px;
+}
+
+:root[dir="rtl"] .modal-content {
+  text-align: right;
+}
+
+:root[dir="rtl"] .modal-close {
+  right: auto;
+  left: 16px;
 }
